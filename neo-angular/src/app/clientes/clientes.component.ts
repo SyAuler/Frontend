@@ -10,7 +10,7 @@ import { RoutesService } from '../routes.service';
 })
 export class ClientesComponent implements OnInit {
 
-  clientes: Array<any>;
+clientes: Array<any>; /* criando um parametro para passar alista de clientes */
 
   constructor(private routesService: RoutesService) { }
 

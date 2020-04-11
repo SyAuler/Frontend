@@ -1,7 +1,19 @@
-<h2>Listagem</h2>>
+<h2>Listagem</h2>
+<!-- puxa da classe clientes.components.ts -->
 
-<ul>
-  <li *ngFor="let cli of clientes"> <!-- puxa da classe clientes.components.ts -->
-    {{cli.id}} - {{cli.name}}
-  </li>
-</ul>
+<div class="list-data">
+  <ul>
+    <li *ngFor="let c of clientes">
+      {{c.id}}
+    </li>
+    <li *ngFor="let c of clientes">
+      {{c.name}}
+    </li>
+    <li *ngFor="let c of clientes">
+      {{c.age}}
+    </li>
+    <li *ngFor="let c of clientes">
+      {{c.city}}
+    </li> 
+  </ul>  
+</div>
