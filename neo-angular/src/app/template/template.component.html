@@ -1,45 +1,51 @@
 
 <div class="content">
-<ng-container *ngIf="tipo_template === 1">
-  <div class="card" *ngFor="let cli of contatos">
-    <h5 class="card-header">Destaque</h5>
-    <div class="card-body">
-      <h5 class="card-title"> {{cli.id}} - {{cli.name}} </h5>
-      <div class="card-text">
-        <li> {{cli.age}}  </li>
-        <li> {{cli.city}}  </li>
+  <ng-container *ngIf="tipo_template === 1">
+    <div class="card-header" *ngFor="let cli of contatos">
+      <div class="card-title"> 
+        {{cli.name}} 
       </div>
-      <button type="button" class="btn btn-primary" (click)="openModal(cli)">
-        Editar
-      </button>
-    </div>
-  </div>
-</ng-container>
-
-
-<ng-container *ngIf="tipo_template === 0">
-  <table class="table">
-    <thead >
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Idade</th>
-        <th scope="col">Cidade</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let cli of contatos">
-      <tr>
-        <td> {{cli.id}}  </td>
-        <td> {{cli.name}}  </td>
-        <td> {{cli.age}}  </td>
-        <td> {{cli.city}}  </td>
-        <td>
+      <div class="card-text">
+        <ul>
+          <li><span>Código: </span>{{cli.id}}</li>
+          <li><span>Idade: </span>{{cli.age}}</li>
+          <li><span>Cidade: </span>{{cli.city}}</li>
+        </ul>
+        <div class="btn-card"> 
           <button type="button" class="btn btn-primary" (click)="openModal(cli)">
             Editar
           </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</ng-container>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="tipo_template === 0">
+    <div class="table">
+      <table class="table-responsive-xl">
+        <thead >
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Cidade</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let cli of contatos">
+          <tr>
+            <td> {{cli.id}}  </td>
+            <td> {{cli.name}}  </td>
+            <td> {{cli.age}}  </td>
+            <td> {{cli.city}}  </td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="openModal(cli)">
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-container>
 </div>

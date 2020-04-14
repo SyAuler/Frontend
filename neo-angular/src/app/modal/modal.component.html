@@ -14,7 +14,6 @@
 <div class="modal-sm">
   <form class="needs-validation" novalidate [formGroup]="form">
     <div class="modal-body" >
-
       <div class="col-12">
         <label for="id">ID</label>
         <input value="{{ id }}" type="text" class="form-control" id="id" [ngClass]="{'is-invalid': submitted && hasErrorInteiro('id')}" />
@@ -30,8 +29,7 @@
           type="text"
           class="form-control"
           id="name"
-          [ngClass]="{'is-invalid': submitted && hasErrorText('name')}"
-        />
+          [ngClass]="{'is-invalid': submitted && hasErrorText('name')}" />
         <div class="invalid-feedback" *ngIf="hasErrorText('name') && hasErrorText('name')['required']">
           Por Favor, informe o seu Nome.
         </div>
@@ -44,8 +42,7 @@
           type="text"
           class="form-control"
           id="age"
-          [ngClass]="{'is-invalid': submitted && hasErrorInteiro('age')}"
-        />
+          [ngClass]="{'is-invalid': submitted && hasErrorInteiro('age')}" />
         <div class="invalid-feedback" *ngIf="hasErrorInteiro('age') && hasErrorInteiro('age')['required']">
           Por Favor, informe a sua Idade.
         </div>
@@ -59,17 +56,13 @@
           class="form-control"
           id="city"
           required
-          [ngClass]="{'is-invalid': submitted && hasErrorText('city')}"
-        />
+          [ngClass]="{'is-invalid': submitted && hasErrorText('city')}" />
         <div class="invalid-feedback" *ngIf="hasErrorText('city') && hasErrorText('city')['required']">
           Por Favor, informe o nome da Cidade.
         </div>
       </div>
-
-    
-    
-  </div>
-</form>
+    </div>
+  </form>
 </div>
 
 <div class="modal-footer">
