@@ -1,0 +1,82 @@
+
+<div class="modal-header modal-lg">
+  <h4 class="modal-title pull-left">Modal</h4>
+  <button
+    type="button"
+    class="close pull-right"
+    aria-label="Close"
+    (click)="close()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-sm">
+  <form class="needs-validation" novalidate [formGroup]="form">
+    <div class="modal-body" >
+
+      <div class="col-12">
+        <label for="id">ID</label>
+        <input value="{{ id }}" type="text" class="form-control" id="id" [ngClass]="{'is-invalid': submitted && hasErrorInteiro('id')}" />
+        <div class="invalid-feedback" *ngIf="hasErrorInteiro('id') && hasErrorInteiro('id')['required']">
+          Por Favor, informe o id.
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <label for="nome">Nome</label>
+        <input
+          value="{{ name }}"
+          type="text"
+          class="form-control"
+          id="name"
+          [ngClass]="{'is-invalid': submitted && hasErrorText('name')}"
+        />
+        <div class="invalid-feedback" *ngIf="hasErrorText('name') && hasErrorText('name')['required']">
+          Por Favor, informe o seu Nome.
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <label for="age">Idade</label>
+        <input
+          value="{{ age }}"
+          type="text"
+          class="form-control"
+          id="age"
+          [ngClass]="{'is-invalid': submitted && hasErrorInteiro('age')}"
+        />
+        <div class="invalid-feedback" *ngIf="hasErrorInteiro('age') && hasErrorInteiro('age')['required']">
+          Por Favor, informe a sua Idade.
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <label for="city">Cidade</label>
+        <input
+        value="{{ city }}"
+          type="text"
+          class="form-control"
+          id="city"
+          required
+          [ngClass]="{'is-invalid': submitted && hasErrorText('city')}"
+        />
+        <div class="invalid-feedback" *ngIf="hasErrorText('city') && hasErrorText('city')['required']">
+          Por Favor, informe o nome da Cidade.
+        </div>
+      </div>
+
+    
+    
+  </div>
+</form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">
+    Fechar
+  </button>
+  <button type="button" class="btn btn-primary" (click)="save()">
+    Salvar
+  </button>
+</div>

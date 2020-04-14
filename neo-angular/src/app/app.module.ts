@@ -2,26 +2,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClientesComponent } from './clientes/clientes.component';
 import { RoutesService } from './routes.service';
 import { TemplateComponent } from './template/template.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientesComponent,
-    TemplateComponent
+    TemplateComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ReactiveFormsModule
   ],
-  providers: [ RoutesService ],
+  entryComponents: [
+    ModalComponent,
+  ],
+  providers: [ RoutesService, BsModalRef ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

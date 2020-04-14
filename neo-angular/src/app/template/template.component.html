@@ -1,0 +1,45 @@
+
+<div class="content">
+<ng-container *ngIf="tipo_template === 1">
+  <div class="card" *ngFor="let cli of contatos">
+    <h5 class="card-header">Destaque</h5>
+    <div class="card-body">
+      <h5 class="card-title"> {{cli.id}} - {{cli.name}} </h5>
+      <div class="card-text">
+        <li> {{cli.age}}  </li>
+        <li> {{cli.city}}  </li>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="openModal(cli)">
+        Editar
+      </button>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="tipo_template === 0">
+  <table class="table">
+    <thead >
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Cidade</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let cli of contatos">
+      <tr>
+        <td> {{cli.id}}  </td>
+        <td> {{cli.name}}  </td>
+        <td> {{cli.age}}  </td>
+        <td> {{cli.city}}  </td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="openModal(cli)">
+            Editar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+</div>
